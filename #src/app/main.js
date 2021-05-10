@@ -3,4 +3,3 @@
 //@prepros-append components/User.js
 //@prepros-append router/router.js
 //@prepros-append App.js
-//@prepros-append test/tests.js

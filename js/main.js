@@ -201,16 +201,3 @@ let app = new Vue({
     return h(App);
   }
 }).$mount("#app");
-
-function testFilter(result, testing, expecting, comment) {
-  if (result !== expecting) {
-    console.log(result, expecting);
-    console.error("\u0422\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u043D\u0430 \"".concat(comment, "\" \u043F\u0440\u043E\u0432\u0430\u043B\u0435\u043D\u043E. \u041F\u043E\u0441\u043B\u0435 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \"").concat(testing, "\" \u043E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C \"").concat(expecting, "\", \u0430 \u0432\u0435\u0440\u043D\u0443\u043B\u043E\u0441\u044C \"").concat(result, "\"."));
-  } else {
-    console.log("\u0422\u0435\u0441\u0442\u0438\u0440\u043E\u0432\u0430\u043D\u0438\u0435 \u043D\u0430 \"".concat(comment, "\" \u043F\u0440\u043E\u0439\u0434\u0435\u043D\u043E. \u041F\u043E\u0441\u043B\u0435 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \"").concat(testing, "\" \u043E\u0436\u0438\u0434\u0430\u043B\u043E\u0441\u044C \"").concat(expecting, "\" \u0438 \u0432\u0435\u0440\u043D\u0443\u043B\u043E\u0441\u044C \"").concat(result, "\"."));
-  }
-}
-
-testFilter(Search.methods.filter(' d'), ' d', 'd', 'удаление пробела');
-testFilter(Search.methods.filter(' d: ф'), ' d', 'dф', 'удаление пробелов и двоеточия');
-testFilter(Search.methods.filter('<div class="error1"></div>'), '<div class="error1"></div>', 'divclasserror1div', 'удаление всех символов кроме букв и цифр');
